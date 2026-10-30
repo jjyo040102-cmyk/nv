@@ -10,7 +10,7 @@ ActFlow retains a goal, checks action policy before execution, verifies the resu
 
 [Watch the 2-minute 57-second English demo](ActFlow_Demo_English_2026-10-30/ActFlow_English_Demo_2m57s.mp4). The walkthrough uses sample data, English narration, and translated on-screen labels; the current application interface and original sample spreadsheet use Korean. The video shows task creation, human approval, generated files, evidence, scheduling, completion, and recovery.
 
-The [ActFlow demonstration site](https://actflow-journey-demo.jjyo040102.chatgpt.site) presents the video and project overview; it is currently accessible to its owner. The site's static source is in [site/](site/), while the application source is in the rest of this repository.
+The [ActFlow workspace on ChatGPT Sites](https://actflow-journey-demo.jjyo040102.chatgpt.site) is currently accessible to its owner. It runs an English-language training-workflow implementation with persistent tasks, human approval, document generation, integrity checks, and optional Nebius model analysis. Its independently deployable source is in [site/](site/); the original application source is in the rest of this repository. The Sites version has a narrower feature set: Gmail, unattended scheduled work, and the original app's additional document formats have not been ported.
 
 ## Start locally
 
