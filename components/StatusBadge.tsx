@@ -1,0 +1,3 @@
+const labels: Record<string, string> = { DRAFT: "분석 전", ANALYZED: "분석 완료", RUNNING: "실행 중", WAITING: "결정 대기", COMPLETED: "완료", VERIFIED: "검증 완료", FAILED: "실패", PAUSED: "일시정지", READY: "실행 전", PENDING: "대기", PREPARING: "준비 중", REJECTED: "거절", ROLLED_BACK: "폐기 완료", BLOCKED: "사람 검토 필요", WAITING_EVENT: "대기 중", WAITING_APPROVAL: "승인 대기", CANCELLED: "종료" };
+export function StatusBadge({ status }: { status: string }) { return <span className={`badge status-${status.toLowerCase()}`}><span className="badge-dot" />{labels[status] ?? status}</span>; }
+export function PolicyBadge({ policy }: { policy: string }) { return <span className={`badge policy-${policy.toLowerCase()}`}>{policy}</span>; }

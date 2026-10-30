@@ -1,0 +1,5 @@
+[
+  { "id": "E001", "name": "김민지", "department": "인사팀", "title": "대리", "eligibleForTraining": true, "bankAccount": "DUMMY-ACCOUNT-001", "personalPhone": "010-0000-0001", "residentRegistrationLikeDummy": "DUMMY-RRN-001" },
+  { "id": "E002", "name": "이준호", "department": "개발팀", "title": "과장", "eligibleForTraining": true, "bankAccount": "DUMMY-ACCOUNT-002", "personalPhone": "010-0000-0002", "residentRegistrationLikeDummy": "DUMMY-RRN-002" },
+  { "id": "E003", "name": "박소연", "department": "재무팀", "title": "사원", "eligibleForTraining": false, "bankAccount": "DUMMY-ACCOUNT-003", "personalPhone": "010-0000-0003", "residentRegistrationLikeDummy": "DUMMY-RRN-003" }
+]

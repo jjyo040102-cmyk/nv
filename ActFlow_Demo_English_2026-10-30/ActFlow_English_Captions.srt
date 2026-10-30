@@ -1,0 +1,104 @@
+1
+00:00:00,350 --> 00:00:05,160
+ActFlow is an AI work agent that moves an assignment from goal to verified outcome.
+
+2
+00:00:05,160 --> 00:00:08,060
+Let's walk through a workflow using sample data.
+
+3
+00:00:10,350 --> 00:00:15,340
+An operations manager needs a training participant list and a response document.
+
+4
+00:00:15,340 --> 00:00:19,220
+Choose the sample notice, enter the goal, and start the task.
+
+5
+00:00:19,220 --> 00:00:21,210
+The sample runs in demo mode.
+
+6
+00:00:25,350 --> 00:00:29,830
+ActFlow builds the workflow and identifies a decision that needs a person.
+
+7
+00:00:29,830 --> 00:00:33,170
+The task stays in one place, with a clear next action.
+
+8
+00:00:40,350 --> 00:00:44,620
+An approver reviews the estimated travel expense and confirms the conditions.
+
+9
+00:00:44,620 --> 00:00:48,620
+The workflow then asks for a second confirmation before the next action.
+
+10
+00:00:57,350 --> 00:01:02,050
+ActFlow creates two deliverables: a participant spreadsheet and a response document.
+
+11
+00:01:02,050 --> 00:01:06,440
+The files are reopened and checked before they are made available to download.
+
+12
+00:01:16,350 --> 00:01:19,600
+Here is the spreadsheet, read from the downloaded file.
+
+13
+00:01:19,600 --> 00:01:25,410
+The two eligible employees appear on separate rows with their departments, roles, and training
+status.
+
+14
+00:01:32,350 --> 00:01:35,210
+Completion conditions bring the evidence together.
+
+15
+00:01:35,210 --> 00:01:39,740
+The owner can inspect each check and export a summary of the task and file hashes.
+
+16
+00:01:49,350 --> 00:01:53,920
+For ongoing work, schedule a future check and keep the task's history together.
+
+17
+00:01:53,920 --> 00:01:57,290
+The background worker needs the server to remain running.
+
+18
+00:02:05,350 --> 00:02:10,730
+After reviewing the remaining condition, the owner confirms that the original goal has been met.
+
+19
+00:02:10,730 --> 00:02:12,750
+The task is then marked complete.
+
+20
+00:02:20,350 --> 00:02:22,600
+Here is a separate recovery example.
+
+21
+00:02:22,600 --> 00:02:27,390
+When an approval is rejected, the workflow stops and the staged files are deleted.
+
+22
+00:02:27,390 --> 00:02:29,750
+The action is preserved in the record.
+
+23
+00:02:37,350 --> 00:02:42,390
+Back in the workspace, search and status filters bring the right work to the surface.
+
+24
+00:02:42,390 --> 00:02:45,080
+Every task has a clear state and next step.
+
+25
+00:02:49,350 --> 00:02:53,690
+ActFlow is designed for NVIDIA Nemotron on Nebius Token Factory.
+
+26
+00:02:53,690 --> 00:02:56,390
+ActFlow: work completed with evidence.

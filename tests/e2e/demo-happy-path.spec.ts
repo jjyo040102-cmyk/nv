@@ -1,0 +1,23 @@
+import { test, expect, createDemo, analyzeAndExecute, approveInBrowser, confirmInBrowser, snapshot, verifyFiles } from "./fixtures";
+test("official no-key manual flow produces verified XLSX/DOCX and truthful recorder", async ({ page }) => {
+  const id = await createDemo(page);
+  await page.getByRole("button", { name: "문서 분석" }).click();
+  await expect(page.getByRole("button", { name: "실행 시작" })).toBeVisible();
+  await expect(page.getByText("아직 실행된 작업이 없습니다.", { exact: true })).toBeVisible();
+  let state = await snapshot(page.request, id);
+  expect(state.workflow.status).toBe("ANALYZED"); expect(state.workflow.provider).toMatchObject({ mode: "demo", realModelCalled: false }); expect(state.artifacts).toHaveLength(0);
+  expect(state.events.some(event => event.eventType === "TOOL_EXECUTED")).toBe(false);
+  await page.reload(); await expect(page.getByRole("button", { name: "실행 시작" })).toBeVisible();
+  await page.screenshot({ path: "test-results/workflow-analyzed.png", fullPage: true });
+  await page.getByRole("button", { name: "실행 시작" }).click();
+  await expect(page.getByRole("heading", { name: "승인 후 다음 단계로 진행합니다" })).toBeVisible();
+  state = await snapshot(page.request, id); expect(state.artifacts).toHaveLength(0);
+  expect(state.nodes.find(node => node.id === "lookup")?.status).toBe("VERIFIED");
+  await approveInBrowser(page); await expect(page.getByText("확정 · 검증 완료", { exact: true })).toHaveCount(2);
+  await confirmInBrowser(page); state = await snapshot(page.request, id);
+  expect(state.workflow.status).toBe("COMPLETED"); await verifyFiles(state);
+  expect(state.events.filter(event => event.action === "demo.email.simulate" && event.eventType === "TOOL_EXECUTED")).toHaveLength(1);
+  expect(state.events.every(event => !event.externalEffect || event.externalEffect === "NONE")).toBe(true);
+  for (const artifact of state.artifacts) expect((await page.request.get(`/api/artifacts/${artifact.id}`)).ok()).toBe(true);
+  await page.screenshot({ path: "test-results/workflow-completed.png", fullPage: true });
+});

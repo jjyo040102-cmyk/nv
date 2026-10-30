@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.env*
+data/runtime
+test-results
+playwright-report
+*.tsbuildinfo
+*.sqlite*
+*.traineddata*
+.superpowers
+docs/history

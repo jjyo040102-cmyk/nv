@@ -1,0 +1,27 @@
+services:
+  actflow:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    env_file: ../.env.production.local
+    environment:
+      NODE_ENV: production
+      ACTFLOW_DEMO_AUTH: 'false'
+      ACTFLOW_TEST_MODE: 'false'
+      ACTFLOW_WORKER_ENABLED: 'true'
+      ACTFLOW_DATA_DIR: /app/data/runtime
+      ACTFLOW_DB_PATH: /app/data/runtime/actflow.sqlite
+    ports:
+      - '127.0.0.1:3000:3000'
+    volumes:
+      - actflow_data:/app/data/runtime
+    stop_grace_period: 45s
+    logging:
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'
+volumes:
+  actflow_data:

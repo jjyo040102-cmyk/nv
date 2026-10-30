@@ -1,0 +1,105 @@
+{
+  "releaseDate": "2026-10-23",
+  "timezone": "Asia/Seoul",
+  "source": {
+    "baseCommit": "9fdd996b6e1d69e2f77806a1c9cd46b8e694301a",
+    "testedState": "current uncommitted workspace",
+    "applicationRoot": ".",
+    "historicalRuntimeSourcesExcluded": true
+  },
+  "environment": {
+    "node": "24.18.0",
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "vitest": "5.0.5",
+    "platform": "win32"
+  },
+  "checks": {
+    "dependencyInstall": {
+      "lockfileUpdated": true,
+      "cleanInstallThisRelease": false
+    },
+    "typeCheck": {
+      "passed": true,
+      "log": "data/runtime/release-2026-10-23/check-final.log"
+    },
+    "unitAndIntegration": {
+      "passed": true,
+      "files": 84,
+      "tests": 473,
+      "failures": 0,
+      "log": "data/runtime/release-2026-10-23/tests-final.log"
+    },
+    "productionBuild": {
+      "passed": true,
+      "log": "data/runtime/release-2026-10-23/build-final.log"
+    },
+    "browser": {
+      "passed": true,
+      "tests": 13,
+      "failures": 0,
+      "skipped": 0,
+      "retries": 0,
+      "mode": "isolated fixture development server",
+      "log": "data/runtime/release-2026-10-23/e2e-final.log"
+    },
+    "productionServer": {
+      "passed": true,
+      "browserFlowTested": true,
+      "realNebiusCalled": false,
+      "realGmailCalled": false,
+      "log": "data/runtime/release-2026-10-23/production-final.log",
+      "evidence": "data/runtime/production-smoke-1792753425966/result.json"
+    },
+    "evidenceBenchmark": {
+      "passed": true,
+      "distinctCases": 24,
+      "repetitionsPerCase": 1,
+      "validAccepted": 8,
+      "validCases": 8,
+      "invalidAccepted": 0,
+      "invalidCases": 12,
+      "textOnlyAblationInvalidAccepted": 12,
+      "workflowPassed": 4,
+      "workflowCases": 4,
+      "modelCalls": 0,
+      "externalSends": 0,
+      "evidence": "data/runtime/release-2026-10-23/evidence/1906801e-ac6f-4d9e-88ea-bc6bad462317/report.json",
+      "scope": "20 artifact cases and 4 workflow engine lifecycle cases; not live model or competitor evaluation"
+    },
+    "dependencyAudit": {
+      "total": 0,
+      "critical": 0,
+      "high": 0,
+      "moderate": 0,
+      "low": 0,
+      "info": 0,
+      "log": "data/runtime/release-2026-10-23/npm-audit-final.json"
+    },
+    "diffWhitespace": {
+      "passed": true
+    }
+  },
+  "localExternalConfiguration": {
+    "readOnlyInspection": true,
+    "secretsPrinted": false,
+    "savedProviderCredentialCount": 0,
+    "enabledGmailConnections": 0,
+    "nebiusCliKeyConfigured": false,
+    "googleOAuthConfigured": false
+  },
+  "unresolved": [
+    "Live Nebius NVIDIA account access and inference quality",
+    "Live Gmail OAuth, send/readback and reply wake",
+    "Target-host Docker build and public HTTPS deployment",
+    "Public repository and judge access URLs",
+    "Final English video, user impact measurements, technology feedback and Devpost submission"
+  ],
+  "historicalResults": "docs/hackathon/2026-10-11-release.md",
+  "limitations": [
+    "Tests use isolated synthetic fixtures or mocked HTTP.",
+    "Server-recorded model receipts can be mocked in tests; an export is not proof of live service access.",
+    "Evidence export checksum is not a signature.",
+    "No general zero-error or competition-ranking claim."
+  ]
+}

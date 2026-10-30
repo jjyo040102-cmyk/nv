@@ -1,0 +1,3 @@
+import { Brain, Link2 } from "lucide-react";
+import type { MemoryEntryRecord } from "@/lib/tasks/types";
+export function TaskMemoryPanel({memory}:{memory:MemoryEntryRecord[]}){return <section className="panel task-subpanel"><div className="panel-heading"><div><h2><Brain size={18}/> 기억과 근거</h2><p>AI가 다음 판단에 사용하는 정보와 출처입니다.</p></div></div>{memory.length?<div className="memory-list">{memory.map(m=><div className="memory-row" key={m.id}><div><span className="badge neutral">{m.scope}</span><strong>{m.summary}</strong></div><small><Link2 size={12}/>{m.sourceType} · {m.sourceId} · 신뢰도 {Math.round(m.confidence*100)}%</small></div>)}</div>:<div className="empty-inline padded">저장된 기억이 없습니다.</div>}</section>}

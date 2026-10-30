@@ -1,0 +1,8 @@
+{
+  "id": "actflow-demo-organization",
+  "name": "ActFlow 데모 조직",
+  "version": 1,
+  "rules": [
+    { "id": "demo-training-expense", "classification": "APPROVAL", "when": { "actionType": "expense.process", "amountAtLeast": 100000 } }
+  ]
+}

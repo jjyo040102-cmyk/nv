@@ -1,0 +1,36 @@
+import type { PolicyClass, ProviderId } from "../domain/types";
+
+export type NewRecorderEvent = {
+  workflowId: string;
+  livingTaskId?: string;
+  wakeEventId?: string;
+  agentSessionId?: string;
+  nodeId?: string;
+  eventType: string;
+  actor: string;
+  provider?: ProviderId;
+  model?: string;
+  providerMode?: "demo" | "real";
+  realModelCalled?: boolean;
+  action?: string;
+  purpose?: string;
+  source?: string;
+  dataRead?: string[];
+  fieldsRead?: string[];
+  fieldsExcluded?: string[];
+  generatedFiles?: string[];
+  changedData?: string[];
+  policyClass?: PolicyClass;
+  policyReason?: string;
+  matchedRules?: string[];
+  policyVersion?: number;
+  externalEffect: "NONE" | "SIMULATED" | "ACTUAL";
+  approvalId?: string;
+  temporaryArtifactIds?: string[];
+  rollbackStatus?: string;
+  verificationStatus?: string;
+  error?: string;
+  retryCount?: number;
+  details?: Record<string, unknown>;
+};
+export type RecorderEvent = NewRecorderEvent & { id: string; sequence: number; createdAt: string };

@@ -1,0 +1,23 @@
+00:00  ActFlow is an AI work agent that moves an assignment from goal to verified outcome. Let's walk through a workflow using sample data.
+
+00:10  An operations manager needs a training participant list and a response document. Choose the sample notice, enter the goal, and start the task. The sample runs in demo mode.
+
+00:25  ActFlow builds the workflow and identifies a decision that needs a person. The task stays in one place, with a clear next action.
+
+00:40  An approver reviews the estimated travel expense and confirms the conditions. The workflow then asks for a second confirmation before the next action.
+
+00:57  ActFlow creates two deliverables: a participant spreadsheet and a response document. The files are reopened and checked before they are made available to download.
+
+01:16  Here is the spreadsheet, read from the downloaded file. The two eligible employees appear on separate rows with their departments, roles, and training status.
+
+01:32  Completion conditions bring the evidence together. The owner can inspect each check and export a summary of the task and file hashes.
+
+01:49  For ongoing work, schedule a future check and keep the task's history together. The background worker needs the server to remain running.
+
+02:05  After reviewing the remaining condition, the owner confirms that the original goal has been met. The task is then marked complete.
+
+02:20  Here is a separate recovery example. When an approval is rejected, the workflow stops and the staged files are deleted. The action is preserved in the record.
+
+02:37  Back in the workspace, search and status filters bring the right work to the surface. Every task has a clear state and next step.
+
+02:49  ActFlow is designed for NVIDIA Nemotron on Nebius Token Factory. ActFlow: work completed with evidence.

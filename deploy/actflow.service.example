@@ -1,0 +1,24 @@
+# Alternative to Docker: copy to /etc/systemd/system/actflow.service after editing paths.
+[Unit]
+Description=ActFlow web application and durable task worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=actflow
+WorkingDirectory=/opt/actflow
+Environment=NODE_ENV=production
+Environment=ACTFLOW_DEMO_AUTH=false
+Environment=ACTFLOW_TEST_MODE=false
+EnvironmentFile=/opt/actflow/.env.production.local
+ExecStart=/usr/bin/node /opt/actflow/node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3000
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=45
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
