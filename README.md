@@ -10,6 +10,8 @@ ActFlow retains a goal, checks action policy before execution, verifies the resu
 
 [Watch the 2-minute 57-second English demo](ActFlow_Demo_English_2026-10-30/ActFlow_English_Demo_2m57s.mp4). The walkthrough uses sample data, English narration, and translated on-screen labels; the current application interface and original sample spreadsheet use Korean. The video shows task creation, human approval, generated files, evidence, scheduling, completion, and recovery.
 
+The [ActFlow demonstration site](https://actflow-journey-demo.jjyo040102.chatgpt.site) presents the video and project overview; it is currently accessible to its owner. The site's static source is in [site/](site/), while the application source is in the rest of this repository.
+
 ## Start locally
 
 Use Node.js 24 LTS (supported: 22.22.2+, 24.15.0+, or 26+).
